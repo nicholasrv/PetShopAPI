@@ -36,6 +36,7 @@ public class AppointmentController {
     @Autowired
     private VeterinarianService veterinarianService;
 
+
     @PostMapping("/appointments/save")
     @Transactional
     public AppointmentResponseDTO createAppointment(@RequestBody AppointmentDTO appointmentDTO) throws SQLException {

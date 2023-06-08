@@ -54,4 +54,8 @@ public class OwnerService implements PetShopApiService<Owner> {
         }
         return false;
     }
+
+    public boolean existsOwnerBySsNumber(String ssNumber){
+        return ownerRepository.existsOwnerBySsNumber(ssNumber);
+    }
 }

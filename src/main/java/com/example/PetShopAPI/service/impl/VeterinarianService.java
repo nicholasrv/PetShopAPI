@@ -53,4 +53,8 @@ public class VeterinarianService implements PetShopApiService<Veterinarian> {
         }
         return false;
     }
+
+    public boolean existsVeterinarianByRegNumber(String regNumber){
+        return veterinarianRepository.existsVeterinarianByRegNumber(regNumber);
+    }
 }

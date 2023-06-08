@@ -55,4 +55,8 @@ public class DogService implements PetShopApiService<Dog> {
         }
         return false;
     }
+
+    public boolean existsDogByNickName(String nickName) {
+        return dogRepository.existsDogByNickName(nickName);
+    }
 }
