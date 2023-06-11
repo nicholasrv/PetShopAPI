@@ -2,7 +2,6 @@ package com.example.PetShopAPI.controller;
 
 import com.example.PetShopAPI.dto.AppointmentDTO;
 import com.example.PetShopAPI.dto.AppointmentResponseDTO;
-import com.example.PetShopAPI.dto.VeterinarianDTO;
 import com.example.PetShopAPI.exceptions.ResourceNotFoundException;
 import com.example.PetShopAPI.model.Appointment;
 import com.example.PetShopAPI.model.Dog;
@@ -96,8 +95,13 @@ public class AppointmentController {
         }
     }
 
+    @GetMapping("/appointmentsbydog/{id}")
+    public ResponseEntity<List<Appointment>> findAppointmentsByDog(@PathVariable Long id) throws ResourceNotFoundException {
+        return ResponseEntity.ok(appointmentService.findAppointmentByDog(id));
+    }
 
-
-
-
+    @GetMapping("/appointmentsbyveterinarian/{id}")
+    public ResponseEntity<List<Appointment>> findAppointmentsByVeterinarian(@PathVariable Long id) throws ResourceNotFoundException {
+        return ResponseEntity.ok(appointmentService.findAppointmentByVeterinarian(id));
+    }
 }

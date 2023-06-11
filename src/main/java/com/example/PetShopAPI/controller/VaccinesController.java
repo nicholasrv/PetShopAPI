@@ -79,4 +79,14 @@ public class VaccinesController {
         }
     }
 
+    @GetMapping("/vaccinesbydog/{id}")
+    public ResponseEntity<List<Vaccines>> findVaccinesByDog(@PathVariable Long id) throws ResourceNotFoundException {
+        return ResponseEntity.ok(vaccinesService.findVaccinesByDog(id));
+    }
+
+    @GetMapping("/vaccinesbyveterinarian/{id}")
+    public ResponseEntity<List<Vaccines>> findVaccinesByVeterinarian(@PathVariable Long id) throws ResourceNotFoundException {
+        return ResponseEntity.ok(vaccinesService.findVaccinesByVeterinarian(id));
+    }
+
 }
